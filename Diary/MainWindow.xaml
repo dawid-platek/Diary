@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Button Click="Button_Click" Grid.Row="0" Grid.Column="0" Margin="15" Content="Przycisk 1"/>
+        <Button Grid.Row="0" Grid.Column="1" Margin="15" Content="Przycisk 2"/>
+        <Button Grid.Row="1" Grid.Column="0" Margin="15" Content="Przycisk 3"/>
+        <Button Grid.Row="1" Grid.Column="1" Margin="15" Content="Przycisk 4"/>
     </Grid>
 </Window>
