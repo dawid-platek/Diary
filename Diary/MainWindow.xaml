@@ -5,19 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Diary"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="Dziennik ucznia" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Button Click="Button_Click" Grid.Row="0" Grid.Column="0" Margin="15" Content="Przycisk 1"/>
-        <Button Grid.Row="0" Grid.Column="1" Margin="15" Content="Przycisk 2"/>
-        <Button Grid.Row="1" Grid.Column="0" Margin="15" Content="Przycisk 3"/>
-        <Button Grid.Row="1" Grid.Column="1" Margin="15" Content="Przycisk 4"/>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Dodaj" Height="25" Width="100" Margin="5" />
+            <Button Content="Edytuj" Height="25" Width="100" Margin="5" />
+            <Button Content="Usuń" Height="25" Width="100" Margin="5" />
+            <ComboBox Height="26" Width="150" Margin="5" />
+            <Button Content="Odśwież" Height="25" Width="100" Margin="5" />
+        </StackPanel>
+        <DataGrid Grid.Row="1" Margin="5">
+
+        </DataGrid>
     </Grid>
 </Window>
