@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Dziennik ucznia" Height="450" Width="800">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -14,11 +15,21 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            <Button Content="Dodaj" Height="25" Width="100" Margin="5" />
-            <Button Content="Edytuj" Height="25" Width="100" Margin="5" />
-            <Button Content="Usuń" Height="25" Width="100" Margin="5" />
-            <ComboBox Height="26" Width="150" Margin="5" />
-            <Button Content="Odśwież" Height="25" Width="100" Margin="5" />
+            <Button Content="Dodaj"  />
+            <Button Content="Edytuj" />
+            <Button Content="Usuń" />
+            <ComboBox />
+            <Button Style="{StaticResource BtnRefreshStyle}" Content="Odśwież" />
+
+            <Button>
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <Image Width="100" Height="20" Source="/Icons/brand-google.png"/>
+                        <Label Content="Test" FontSize="10"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+
         </StackPanel>
         <DataGrid Grid.Row="1" Margin="5">
 
