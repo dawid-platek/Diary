@@ -1,6 +1,7 @@
-﻿using MahApps.Metro.Controls;
+﻿using Diary.ViewModels;
+using MahApps.Metro.Controls;
 
-namespace Diary
+namespace Diary.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -10,6 +11,7 @@ namespace Diary
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
         }
 
 
