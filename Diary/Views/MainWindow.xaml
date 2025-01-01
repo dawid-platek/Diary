@@ -7,7 +7,7 @@
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Dziennik ucznia" Height="450" Width="800">
+        Title="Dziennik ucznia" Height="450" Width="900">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -19,11 +19,31 @@
             <Button Content="Dodaj" Height="25" Width="100" Margin="5" />
             <Button Content="Edytuj" Height="25" Width="100" Margin="5"/>
             <Button Content="Usuń" Height="25" Width="100" Margin="5"/>
-            <ComboBox Height="26" Width="150" Margin="5"/>
+            <ComboBox Height="26" Width="150" Margin="5" ItemsSource="{Binding Groups}" SelectedValue="{Binding SelectedGroupId}" DisplayMemberPath="Name" SelectedValuePath="Id"/>
             <Button Command="{Binding RefreshStudentsCommand}" Content="Odśwież" Height="25" Width="100" Margin="5"/>
-            <TextBox Text="{Binding Test, Mode=OneWayToSource}" Width="100" Margin="5"/>
         </StackPanel>
-        <DataGrid Grid.Row="1" Margin="5">
+        <DataGrid 
+            Grid.Row="1"
+            Margin="5"
+            ItemsSource="{Binding Students}"
+            SelectedItem="{Binding SelectedStudent}"
+            CanUserAddRows="False"
+            IsReadOnly="True"
+            SelectionMode="Single"
+            AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Imię" Binding="{Binding FirstName}" />
+                <DataGridTextColumn Header="Nazwisko" Binding="{Binding LastName}" />
+                <DataGridTextColumn Header="Uwagi" Binding="{Binding Comments}" />
+                <DataGridTextColumn Header="Matematyka" Binding="{Binding Math}" />
+                <DataGridTextColumn Header="Technologia" Binding="{Binding Technology}" />
+                <DataGridTextColumn Header="Fizyka" Binding="{Binding Physics}" />
+                <DataGridTextColumn Header="Język polski" Binding="{Binding PolishLang}" />
+                <DataGridTextColumn Header="Język obcy" Binding="{Binding ForeignLang}" />
+                <DataGridCheckBoxColumn Header="Dodatkowe" Binding="{Binding Activities}" />
+                <DataGridTextColumn Header="Grupa" Binding="{Binding Group.Name}" />
+            </DataGrid.Columns>
 
         </DataGrid>
     </Grid>
