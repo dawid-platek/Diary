@@ -15,13 +15,47 @@
 
             <RowDefinition />
         </Grid.RowDefinitions>
+        
         <StackPanel Orientation="Horizontal">
-            <Button Content="Dodaj" Height="25" Width="100" Margin="5" />
-            <Button Content="Edytuj" Height="25" Width="100" Margin="5"/>
-            <Button Content="Usuń" Height="25" Width="100" Margin="5"/>
-            <ComboBox Height="26" Width="150" Margin="5" ItemsSource="{Binding Groups}" SelectedValue="{Binding SelectedGroupId}" DisplayMemberPath="Name" SelectedValuePath="Id"/>
-            <Button Command="{Binding RefreshStudentsCommand}" Content="Odśwież" Height="25" Width="100" Margin="5"/>
+            <Button 
+                Command="{Binding AddStudentsCommand}" 
+                Content="Dodaj" 
+                Height="25" 
+                Width="100" 
+                Margin="5" />
+            
+            <Button 
+                Command="{Binding EditStudentsCommand}" 
+                CommandParameter="{Binding SelectedStudent}"
+                Content="Edytuj" 
+                Height="25" 
+                Width="100" 
+                Margin="5"/>
+            
+            <Button 
+                Command="{Binding DeleteStudentsCommand}" 
+                Content="Usuń" 
+                Height="25" 
+                Width="100" 
+                Margin="5"/>
+            
+            <ComboBox 
+                Height="26" 
+                Width="150" 
+                Margin="5" 
+                ItemsSource="{Binding Groups}" 
+                SelectedValue="{Binding SelectedGroupId}" 
+                DisplayMemberPath="Name" 
+                SelectedValuePath="Id"/>
+            
+            <Button 
+                Command="{Binding RefreshStudentsCommand}" 
+                Content="Odśwież" 
+                Height="25" 
+                Width="100" 
+                Margin="5"/>
         </StackPanel>
+        
         <DataGrid 
             Grid.Row="1"
             Margin="5"

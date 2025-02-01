@@ -1,4 +1,5 @@
-﻿using Diary.ViewModels;
+﻿using Diary.Models;
+using Diary.ViewModels;
 using MahApps.Metro.Controls;
 
 namespace Diary.Views
@@ -8,10 +9,10 @@ namespace Diary.Views
     /// </summary>
     public partial class AddEditStudentView : MetroWindow
     {
-        public AddEditStudentView()
+        public AddEditStudentView(Student student = null)
         {
             InitializeComponent();
-            DataContext = new AddEditStudentViewModel();
+            DataContext = new AddEditStudentViewModel(student);
         }
     }
 }
