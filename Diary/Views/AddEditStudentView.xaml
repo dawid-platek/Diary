@@ -7,6 +7,7 @@
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
+        Name ="AddEditStudentWindow"
         Title="Dane ucznia" Height="520" Width="400">
 
     <Grid>
@@ -150,11 +151,13 @@
             HorizontalAlignment="Right">
             <Button 
                 Command="{Binding ConfirmCommand}"
+                CommandParameter="{Binding ElementName=AddEditStudentWindow}"
                 Content="Zatwierdź" 
                 Height="25" Width="100" 
                 Margin="5"/>
             <Button 
                 Command="{Binding CloseCommand}"
+                CommandParameter="{Binding ElementName=AddEditStudentWindow}"
                 Content="Anuluj" 
                 Height="25" 
                 Width="100" 

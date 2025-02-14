@@ -2,6 +2,10 @@
 {
     public class Student
     {
+        public Student()
+        {
+            Group = new Group();
+        }
 
         public int Id { get; set; }
         public string FirstName { get; set; }
