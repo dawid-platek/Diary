@@ -1,5 +1,6 @@
 ﻿using Diary.Commands;
 using Diary.Models;
+using Diary.Models.Wrappers;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -9,7 +10,7 @@ namespace Diary.ViewModels
 {
     public class AddEditStudentViewModel : ViewModelBase
     {
-        public AddEditStudentViewModel(Student student = null)
+        public AddEditStudentViewModel(StudentWrapper student = null)
         {
             CloseCommand = new RelayCommand(Close);
             ConfirmCommand = new RelayCommand(Confirm);
@@ -18,7 +19,7 @@ namespace Diary.ViewModels
 
             if (student == null)
             {
-                Student = new Student();
+                Student = new StudentWrapper();
                 IsUpdate = false;
             }
             else
@@ -35,8 +36,8 @@ namespace Diary.ViewModels
 
         public ICommand ConfirmCommand { get; set; }
 
-        private Student _student;
-        public Student Student
+        private StudentWrapper _student;
+        public StudentWrapper Student
         {
             get { return _student; }
             set
@@ -69,9 +70,9 @@ namespace Diary.ViewModels
             }
         }
 
-        private ObservableCollection<Group> _group;
+        private ObservableCollection<GroupWrapper> _group;
 
-        public ObservableCollection<Group> Groups
+        public ObservableCollection<GroupWrapper> Groups
         {
             get { return _group; }
             set
@@ -117,11 +118,11 @@ namespace Diary.ViewModels
 
         private void InitGroups()
         {
-            Groups = new ObservableCollection<Group>
+            Groups = new ObservableCollection<GroupWrapper>
             {
-                new Group { Id = 0, Name = "-- brak --" },
-                new Group { Id = 1, Name = "1A" },
-                new Group { Id = 2, Name = "2A" },
+                new GroupWrapper { Id = 0, Name = "-- brak --" },
+                new GroupWrapper { Id = 1, Name = "1A" },
+                new GroupWrapper { Id = 2, Name = "2A" },
             };
 
             Student.Group.Id = 0;
